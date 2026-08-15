@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+.<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,9 +7,7 @@
 <title>For my king 👑 ❤️</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -16,73 +15,50 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family:Georgia,serif;
-  background:linear-gradient(135deg,#ffd6e7,#fff0f5);
-  text-align:center;
   padding:20px;
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#ffd6e7,#fff1f6);
+  text-align:center;
 }
 
 .card{
   width:100%;
   max-width:430px;
-  background:rgba(255,255,255,.9);
+  padding:28px 20px;
+  background:#fffafa;
   border-radius:30px;
-  padding:30px 22px;
-  box-shadow:0 10px 35px rgba(0,0,0,.15);
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 h1{
-  color:#c22f69;
+  color:#bd2f68;
 }
 
 .heart{
-  width:150px;
-  height:135px;
-  margin:20px auto;
   position:relative;
-  cursor:pointer;
+  display:inline-block;
+  font-size:120px;
+  line-height:1;
+  margin:20px 0;
   animation:beat 1.2s infinite;
 }
 
-.heart:before,
-.heart:after{
-  content:"";
+.number{
   position:absolute;
-  top:0;
-  width:78px;
-  height:120px;
-  background:#ef4161;
-  border-radius:80px 80px 0 0;
-}
-
-.heart:before{
-  left:72px;
-  transform:rotate(45deg);
-  transform-origin:0 100%;
-}
-
-.heart:after{
-  left:0;
-  transform:rotate(-45deg);
-  transform-origin:100% 100%;
-}
-
-.password{
-  position:absolute;
-  z-index:2;
-  width:100%;
-  top:52px;
-  left:0;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
   color:white;
-  font-size:19px;
+  font-size:15px;
   font-weight:bold;
+  white-space:nowrap;
 }
 
 input{
   width:100%;
   padding:14px;
-  border:2px solid #f29ab8;
-  border-radius:15px;
+  border:2px solid #e9a0bb;
+  border-radius:18px;
   font-size:16px;
   text-align:center;
   outline:none;
@@ -92,11 +68,10 @@ button{
   margin-top:15px;
   padding:13px 25px;
   border:0;
-  border-radius:20px;
+  border-radius:22px;
   background:#d93670;
   color:white;
   font-size:16px;
-  cursor:pointer;
 }
 
 #letter{
@@ -109,7 +84,7 @@ button{
 
 .song{
   margin-top:25px;
-  padding:15px;
+  padding:18px;
   background:#ffe4ef;
   border-radius:20px;
 }
@@ -117,16 +92,16 @@ button{
 .song a{
   display:inline-block;
   margin-top:10px;
-  text-decoration:none;
-  color:white;
-  background:#d93670;
   padding:12px 20px;
-  border-radius:20px;
+  background:#d93670;
+  color:white;
+  text-decoration:none;
+  border-radius:22px;
 }
 
 @keyframes beat{
-  0%,100%{transform:scale(1);}
-  50%{transform:scale(1.08);}
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
 }
 </style>
 </head>
@@ -135,80 +110,82 @@ button{
 
 <div class="card">
 
-  <h1>For My King 👑❤️</h1>
+<h1>For My King 👑❤️</h1>
 
-  <div class="heart">
-    <div class="password">15/10/2025</div>
-  </div>
+<div class="heart">
+  ❤️
+  <div class="number">15/10/2025</div>
+</div>
 
-  <p>Enter our special date 🥹❤️</p>
+<p>Enter our special date 🥹❤️</p>
 
-  <input id="pass" type="password" placeholder="Password">
+<input id="pass" type="password" placeholder="Password">
 
-  <button onclick="openLetter()">Open My Heart ❤️</button>
+<br>
 
-  <div id="letter">
+<button onclick="openLetter()">Open My Heart ❤️</button>
 
-    <h2>Happy Birthday purusha! 🎂❤️</h2>
+<div id="letter">
 
-    <p>
-      Ne Love panni vara first birthday 🥳
-      Iniki ne epa epdi happy irukiyo,
-      antha mathari un life time varikum irukanum 🤗
-      Unku yen problem nalum en kita sollu,
-      na eppaum un kuda tha irupa ☺️
-    </p>
+<h2>Happy Birthday purusha! 🎂❤️</h2>
 
-    <p>
-      Un mathri oru person kedaika na kuduthu vaichi irukanum.
-      Enku enna aanalum na un kita tha varuva 🫠
-      Thank you for healing ❤️‍🩹
-    </p>
+<p>
+Ne Love panni vara first birthday 🥳
+Iniki ne epa epdi happy irukiyo,
+antha mathari un life time varikum irukanum 🤗
+Unku yen problem nalum en kita sollu,
+na eppaum un kuda tha irupa ☺️
+</p>
 
-    <p>
-      Plzz always protect like a evil eye 🧿❤️
-      Neriya sanda poduva tha...
-      Ana vittu poga matta.
-      Atha mathiri neeyum enna vittu poga tha da mama 🫣❤️
-    </p>
+<p>
+Un mathri oru person kedaika na kuduthu vaichi irukanum.
+Enku enna aanalum na un kita tha varuva 🫠
+Thank you for healing ❤️‍🩹
+</p>
 
-    <p>
-      I love you sooo much mama 💋❤️‍🩹🫂
-    </p>
+<p>
+Plzz always protect like a evil eye 🧿❤️
+Neriya sanda poduva tha...
+Ana vittu poga matta.
+Atha mathiri neeyum enna vittu poga tha da mama 🫣
+</p>
 
-    <p>
-      Once again wish you many more happy returns of the day
-      my king 👑💋❤️‍🩹🫂🫠
-    </p>
+<p>
+I love you sooo much mama 💋❤️‍🩹🫂
+</p>
 
-    <div class="song">
-      <h3>🎵 For You, My Love ❤️</h3>
-      <p>En Aazha song 🎶</p>
+<p>
+Once again wish you many more happy returns of the day
+my king 👑💋❤️‍🩹🫂🫠
+</p>
 
-      <a href="https://www.youtube.com/results?search_query=En+Aazha+song"
-         target="_blank">
-         Play Song 🎵
-      </a>
-    </div>
+<div class="song">
+<h3>🎵 My Song For You ❤️</h3>
+<p>En Aazha 🎶</p>
 
-  </div>
+<a href="https://youtu.be/xP4mMpPAVME?si=fEUR-rTjmCR3mMC4"
+target="_blank">
+Play My Song 🎵❤️
+</a>
+</div>
+
+</div>
 
 </div>
 
 <script>
 function openLetter(){
 
-  let password = document.getElementById("pass").value;
+let password=document.getElementById("pass").value;
 
-  if(password === "15/10/2025"){
-    document.getElementById("letter").style.display = "block";
-  }
-  else{
-    alert("Wrong password 😜❤️ Try again!");
-  }
+if(password==="15/10/2025"){
+document.getElementById("letter").style.display="block";
+}else{
+alert("Wrong password 😜❤️");
+}
 
 }
 </script>
 
 </body>
-  </html>
+</html>
