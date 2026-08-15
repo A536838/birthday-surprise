@@ -3,180 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You 💐❤️</title>
+<title>For Sabari ❤️</title>
 
 <style>
-*{box-sizing:border-box}
-
 body{
   margin:0;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family:Georgia,serif;
-  background:linear-gradient(135deg,#ffd6e7,#fff1f7,#ffd1df);
-  overflow:hidden;
   text-align:center;
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#ffd6e7,#fff0f6);
+  overflow:hidden;
 }
 
-.container{
-  width:92%;
-  max-width:430px;
+.card{
+  width:88%;
+  max-width:400px;
+  padding:30px 20px;
+  background:rgba(255,255,255,.75);
+  border-radius:28px;
+  box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+.teddy{
+  font-size:85px;
 }
 
 h1{
   color:#c83d78;
-  font-size:30px;
 }
 
-.bouquet{
-  font-size:90px;
-  cursor:pointer;
-  animation:float 2s infinite ease-in-out;
-}
-
-@keyframes float{
-  50%{transform:translateY(-12px)}
-}
-
-.teddy{
-  font-size:65px;
-  margin-top:10px;
-}
-
-.heart{
-  margin:20px auto;
-  width:260px;
-  min-height:130px;
-  background:#ff5c91;
-  color:white;
-  padding:35px 25px;
-  clip-path:polygon(
-    50% 100%,0 35%,0 18%,8% 5%,22% 0,
-    35% 5%,50% 20%,65% 5%,78% 0,
-    92% 5%,100% 18%,100% 35%
-  );
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:18px;
-  line-height:1.5;
+input{
+  padding:14px;
+  width:80%;
+  border:2px solid #f3a4c2;
+  border-radius:25px;
+  text-align:center;
+  font-size:17px;
+  outline:none;
 }
 
 button{
-  border:0;
+  margin-top:15px;
   padding:13px 25px;
+  border:0;
   border-radius:25px;
   background:#d9467a;
   color:white;
   font-size:16px;
-  cursor:pointer;
 }
 
 #surprise{
   display:none;
 }
 
-.small{
-  color:#8b4260;
-  font-size:15px;
+.bouquet{
+  font-size:85px;
 }
 
-.heartDrop{
-  position:fixed;
-  top:-30px;
-  animation:fall 4s linear forwards;
-  font-size:25px;
+.heart{
+  font-size:70px;
+  animation:beat 1s infinite;
 }
 
-@keyframes fall{
-  to{
-    transform:translateY(110vh) rotate(360deg);
-  }
+.message{
+  color:#7d3858;
+  font-size:18px;
+  line-height:1.6;
+}
+
+@keyframes beat{
+  50%{transform:scale(1.15)}
+}
+
+#error{
+  color:#d33;
+  display:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
 
-  <div id="locked">
-    <h1>💌 A Little Surprise For You 💌</h1>
-    <div class="teddy">🧸</div>
-    <p class="small">
-      This surprise will open on your special date ❤️
-    </p>
-    <p id="dateText"></p>
-  </div>
-
-  <div id="surprise">
-
-    <h1>For My Special Person 💖</h1>
-
-    <div class="bouquet">💐</div>
-
+  <div id="lock">
     <div class="teddy">🧸</div>
 
-    <div class="heart">
-      Happy Birthday, My Love! ❤️<br><br>
-      You are one of the most special people in my life.
-      I hope your day is filled with happiness, love and beautiful moments. 💕
-    </div>
+    <h1>For Sabari ❤️</h1>
+
+    <p>Enter our special date 🔐</p>
+
+    <div class="heart">❤️</div>
+
+    <input id="password" type="text" placeholder="DD/MM/YYYY">
 
     <br>
 
-    <button onclick="hearts()">Tap For A Surprise 💗</button>
+    <button onclick="openSurprise()">Open My Surprise 💌</button>
+
+    <p id="error">Wrong date 😝 Try again ❤️</p>
+  </div>
+
+
+  <div id="surprise">
+
+    <div class="bouquet">💐</div>
+
+    <div class="heart">❤️</div>
+
+    <h1>Happy Birthday Sabari! 🎂❤️</h1>
+
+    <p class="message">
+      You are very special to me. 🥹❤️<br><br>
+      I hope this little surprise makes you smile. 💐<br>
+      Stay happy, stay cute and always be you. 🫶❤️
+    </p>
+
+    <div style="font-size:35px;">
+      🌸🌷🌹🌷🌸
+    </div>
 
   </div>
 
 </div>
 
 <script>
+function openSurprise(){
 
-/* CHANGE THIS DATE */
-const unlockDate = new Date("2026-08-20T00:00:00");
+  const password =
+    document.getElementById("password").value.trim();
 
-function checkDate(){
+  if(password === "15/10/2025"){
 
-  const now = new Date();
-
-  if(now >= unlockDate){
-
-    document.getElementById("locked").style.display="none";
+    document.getElementById("lock").style.display="none";
     document.getElementById("surprise").style.display="block";
 
   }else{
 
-    document.getElementById("dateText").innerHTML =
-      "🔒 Opens on " + unlockDate.toLocaleDateString();
+    document.getElementById("error").style.display="block";
 
   }
 }
-
-function hearts(){
-
-  for(let i=0;i<35;i++){
-
-    let heart=document.createElement("div");
-
-    heart.className="heartDrop";
-    heart.innerHTML="❤️";
-
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDelay=Math.random()*2+"s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-      heart.remove();
-    },5000);
-  }
-}
-
-checkDate();
-
 </script>
 
 </body>
